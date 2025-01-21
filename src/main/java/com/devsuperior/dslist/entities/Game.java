@@ -14,11 +14,19 @@ public class Game {
     private Integer year;
     private String genre;
     private String platform;
+    private Double score;
+    private String platforms;
     private String imgUrl;
+//    definindo manualmente qual tipo do campo
+    @Column(columnDefinition = "TEXT")
+
     private String shortDescription;
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
     public Game(){};
+
+
 
     public Game(String title, Integer year, String genre, String platform, String imgUrl, String shortDescription, String longDescription) {
         this.title = title;
@@ -28,6 +36,21 @@ public class Game {
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
+    }
+    public Double getScore() {
+        return score;
+    }
+
+    public String getPlatforms() {
+        return platforms;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    public void setPlatforms(String platforms) {
+        this.platforms = platforms;
     }
 
     public Long getId() {
